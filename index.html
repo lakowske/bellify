@@ -1,0 +1,29 @@
+<html>
+  <head>
+
+    <title>Zendo</title>
+
+    <script src="bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+  </head>
+
+  <body>
+
+    <a href="#" onclick="window.bonsho()">bonsho</a>
+    <a href="#" onclick="window.clacker()">clacker</a>
+
+    <p><input class="duration" id="duration" type="input" onchange="window.updateDuration()"></input>mins<p>
+    <p><b id="remaining">0</b> mins remaining</p>
+
+      <input onclick="window.start()" type="submit" value="Start"></input>
+      
+    <audio id="bonsho">
+      <source src="27421__kerri__zenbell-1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clacker">
+      <source src="clacker-test.m4a" type="audio/mpeg">
+    </audio>
+  </body>
+
+</html>
