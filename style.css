@@ -3,3 +3,17 @@
     width: 50px;
 
 }
+
+body {
+    background-image: url("enso.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 600px;
+    margin: 20px auto;
+}
+
+ul {
+    list-style-type: none;
+    border: 1px black;
+}

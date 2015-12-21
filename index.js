@@ -26,17 +26,45 @@ var getRemainingMins = function() {
     return document.getElementById('remaining').innerHTML;
 }
 
+var hide = function(id) {
+    var el = document.getElementById(id);
+    el.hidden = true;
+}
+
+var show = function(id) {
+    var el = document.getElementById(id);
+    el.hidden = false;
+}
+
+var stop = function() {
+    clearInterval(countdown);
+    clearTimeout(timeout);
+    
+    setRemainingMins(0);
+
+    show('durationInput');
+    hide('remainingDisplay');    
+    show('startButton');
+    hide('stopButton');
+    
+}
+
+var countdown = null;
+var timeout = null;
+
 var start = function() {
     var duration = getDuration();
-    
     console.log(duration);
-    
     var startMillis = Date.now();
-    
-    
     var durationMillis = duration * 60 * 1000;
+
+    setRemainingMins(Math.ceil(duration));
+    hide('durationInput');
+    show('remainingDisplay');    
+    hide('startButton');
+    show('stopButton');
     
-    var countdown = setInterval(function() {
+    countdown = setInterval(function() {
         var currentMillis = Date.now();
         var elapsedMillis = currentMillis - startMillis;
 
@@ -50,14 +78,14 @@ var start = function() {
         }
     }, 1000);
                
-    setTimeout(function() {
+    timeout = setTimeout(function() {
         bonsho();
-        clearInterval(countdown);
+        stop();
     }, duration * 60 * 1000);
-    
 }
 
 window.bonsho = bonsho;
 window.clacker = clacker;
 window.start = start;
+window.stop  = stop;
 window.updateDuration = updateDuration;

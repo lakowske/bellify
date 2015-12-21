@@ -10,19 +10,36 @@
 
   <body>
 
-    <a href="#" onclick="window.bonsho()">bonsho</a>
-    <a href="#" onclick="window.clacker()">clacker</a>
+    <h3>Meditation Components</h3>
+    <ul>
+      <li><p><input id="add" type="submit"
+           value="Add"></input>Rest <input class="duration"
+                        type="input"></input> Minutes <input class="duration"
+                        type="input"></input> Seconds</p></li>
+      <li><input id="add" type="submit"
+           value="Add"></input><a href="#" onclick="window.bonsho()">bell</a></li>
+      <li><input id="add" type="submit"
+           value="Add"></input><a href="#" onclick="window.clacker()">clacker</a></li>
+    </ul>
 
-    <p><input class="duration" id="duration" type="input" onchange="window.updateDuration()"></input>mins<p>
-    <p><b id="remaining">0</b> mins remaining</p>
-
-      <input onclick="window.start()" type="submit" value="Start"></input>
+    <h3>Meditation Program</h3>
+    <ul id="program">
       
+    </ul>
+
+    <p id="durationInput"><input class="duration" id="duration" type="input" onchange="window.updateDuration()"></input>mins<p>
+    <p id="remainingDisplay" hidden="true"><b id="remaining">0</b> mins remaining</p>
+
+    <input id="startButton" onclick="window.start()" type="submit"
+           value="Start"></input>
+    <input id="stopButton" onclick="window.stop()" type="submit"
+           value="Stop" hidden="true">
+    
     <audio id="bonsho">
-      <source src="27421__kerri__zenbell-1.mp3" type="audio/mpeg">
+      <source src="2166__suburban-grilla__bowl-struck.mp3" type="audio/mpeg">
     </audio>
     <audio id="clacker">
-      <source src="clacker-test.m4a" type="audio/mpeg">
+      <source src="218460__thomasjaunism__wood-block-hit.mp3" type="audio/mpeg">
     </audio>
   </body>
 
