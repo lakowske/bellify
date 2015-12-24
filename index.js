@@ -2,6 +2,10 @@
  * (C) 2015 Seth Lakowske
  */
 
+var play = function(id) {
+    document.getElementById(id).play();
+}
+
 var bonsho = function() {
     document.getElementById('bonsho').play();
 }
@@ -84,6 +88,7 @@ var start = function() {
     }, duration * 60 * 1000);
 }
 
+window.play = play;
 window.bonsho = bonsho;
 window.clacker = clacker;
 window.start = start;
